@@ -1,0 +1,9 @@
+node_modules/
+.output/
+output/
+logs/
+*.log
+.env
+config/social.json
+*.key
+.DS_Store

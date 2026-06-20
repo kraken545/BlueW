@@ -1,0 +1,16 @@
+{
+  "name": "bluewave-memecoin",
+  "version": "1.0.0",
+  "description": "BlueWave Memecoin - Curaçao Good Vibes on Solana",
+  "private": true,
+  "scripts": {
+    "generate:image": "python3 src/scripts/generate_content.py",
+    "generate:video": "python3 src/scripts/generate_video.py",
+    "scheduler": "python3 src/scripts/scheduler.py",
+    "n8n:up": "docker compose -f src/docker/docker-compose.yml up -d",
+    "n8n:down": "docker compose -f src/docker/docker-compose.yml down",
+    "n8n:logs": "docker compose -f src/docker/docker-compose.yml logs -f"
+  },
+  "keywords": ["bluewave", "memecoin", "solana", "curacao"],
+  "license": "MIT"
+}

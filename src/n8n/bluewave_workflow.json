@@ -1,0 +1,102 @@
+{
+  "name": "BlueWave - Publicación Automática",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "hours",
+              "hoursInterval": 6
+            }
+          ]
+        }
+      },
+      "id": "schedule-trigger",
+      "name": "Schedule (cada 6h)",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.1,
+      "position": [250, 300]
+    },
+    {
+      "parameters": {
+        "jsCode": "const messages = [\n  \"Sun, sea, and BlueWave 🌊 Good vibes from Curaçao! #BlueWave #BLUEW\",\n  \"El corazón de Curaçao late en blockchain 💙 #BlueWave #Curaçao\",\n  \"Barika Hel, el espíritu de la isla, vuela con BlueWave 🦜 #BlueWave\",\n  \"Curaçao turismo, cultura, y buena vibra 🌴 #BlueWave #Curaçao\",\n  \"BlueWave - Representando la buena vibra de Curaçao 🌊 #BLUEW\",\n  \"Discover the magic of Curaçao with BlueWave ✨ #Curaçao #BlueWave\",\n  \"Good vibes only from the island of Curaçao 🌊 $BLUEW\",\n  \"BlueWave: where Caribbean vibes meet Solana ☀️ #BlueWave\",\n  \"From Curaçao with love 💙 $BLUEW #Curaçao #Memecoin\",\n  \"Una ola de buena vibra desde Curaçao 🌊 #BlueWave #BLUEW\"\n];\nconst randomMsg = messages[Math.floor(Math.random() * messages.length)];\nreturn [{ message: randomMsg }];"
+      },
+      "id": "random-message",
+      "name": "Mensaje Aleatorio",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [450, 300]
+    },
+    {
+      "parameters": {
+        "jsCode": "const { execSync } = require('child_process');\nconst path = require('path');\nconst projectDir = '/home/opencode/memecoin';\n\n// Generar imagen\nconst imgScript = path.join(projectDir, 'src/scripts/generate_content.py');\nconst result = execSync(`python3 ${imgScript}`, { cwd: projectDir });\nconsole.log(result.toString());\n\nreturn [{ success: true, output: result.toString() }];"
+      },
+      "id": "generate-image",
+      "name": "Generar Imagen",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [650, 300]
+    },
+    {
+      "parameters": {
+        "jsCode": "const { execSync } = require('child_process');\nconst path = require('path');\nconst fs = require('fs');\nconst projectDir = '/home/opencode/memecoin';\nconst outputDir = path.join(projectDir, 'output');\n\n// Buscar la imagen más reciente\nconst files = fs.readdirSync(outputDir)\n  .filter(f => f.endsWith('.png') || f.endsWith('.jpg'))\n  .map(f => ({\n    name: f,\n    time: fs.statSync(path.join(outputDir, f)).mtimeMs\n  }))\n  .sort((a, b) => b.time - a.time);\n\nconst latest = files.length > 0 ? path.join(outputDir, files[0].name) : '';\nreturn [{ imagePath: latest }];"
+      },
+      "id": "find-latest-image",
+      "name": "Buscar Imagen Generada",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [850, 300]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Twitter API v2\nconst tweet = $json.message;\nconst imagePath = $json.imagePath;\n\n// Usando la API de Twitter directamente\n// Reemplaza con tus credenciales\nconst axios = require('axios');\n\nconst consumer_key = '';\nconst consumer_secret = '';\nconst access_token_key = '';\nconst access_token_secret = '';\n\n// TODO: Integrar con OAuth 1.0a para Twitter API\nconsole.log('Tweet:', tweet);\n\nreturn [{ platform: 'twitter', status: 'pending', tweet }];"
+      },
+      "id": "post-twitter",
+      "name": "Publicar en Twitter/X",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1050, 200]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Discord Webhook\nconst webhookUrl = ''; // Tu webhook de Discord\nconst message = $json.message;\n\nif (webhookUrl) {\n  const axios = require('axios');\n  await axios.post(webhookUrl, { content: `📢 ${message}` });\n  console.log('✅ Publicado en Discord');\n}\n\nreturn [{ platform: 'discord', status: webhookUrl ? 'posted' : 'pending', message }];"
+      },
+      "id": "post-discord",
+      "name": "Enviar a Discord",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1050, 400]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Placeholder para Facebook\n// Usar Facebook Graph API\nconst message = $json.message;\nconsole.log('Facebook:', message);\nreturn [{ platform: 'facebook', status: 'pending', message }];"
+      },
+      "id": "post-facebook",
+      "name": "Publicar en Facebook",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1050, 600]
+    }
+  ],
+  "connections": {
+    "Schedule (cada 6h)": {
+      "main": [[{ node: "Mensaje Aleatorio", type: "main", index: 0 }]]
+    },
+    "Mensaje Aleatorio": {
+      "main": [[{ node: "Generar Imagen", type: "main", index: 0 }]]
+    },
+    "Generar Imagen": {
+      "main": [[{ node: "Buscar Imagen Generada", type: "main", index: 0 }]]
+    },
+    "Buscar Imagen Generada": {
+      "main": [
+        [
+          { node: "Publicar en Twitter/X", type: "main", index: 0 },
+          { node: "Enviar a Discord", type: "main", index: 0 },
+          { node: "Publicar en Facebook", type: "main", index: 0 }
+        ]
+      ]
+    }
+  }
+}
