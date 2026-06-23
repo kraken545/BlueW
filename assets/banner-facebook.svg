@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1640 624" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#005A8C"/>
+      <stop offset="50%" stop-color="#00B4D8"/>
+      <stop offset="100%" stop-color="#48CAE4"/>
+    </linearGradient>
+    <linearGradient id="sun" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#FFD200"/>
+      <stop offset="100%" stop-color="#FF6B00"/>
+    </linearGradient>
+  </defs>
+  <rect width="1640" height="624" fill="url(#bg)"/>
+  <circle cx="1400" cy="150" r="80" fill="url(#sun)" opacity="0.6"/>
+  <path d="M0,500 Q205,420 410,500 Q615,580 820,500 Q1025,420 1230,500 Q1435,580 1640,500 L1640,624 L0,624Z" fill="rgba(255,255,255,0.06)"/>
+  <text x="160" y="280" font-family="'Playfair Display',Georgia,serif" font-size="100" font-weight="600" fill="white" letter-spacing="4">BlueWave</text>
+  <text x="162" y="360" font-family="'DM Sans',sans-serif" font-size="28" fill="#FFD200" letter-spacing="10" font-weight="700">CURAÇAO</text>
+  <text x="162" y="420" font-family="'DM Sans',sans-serif" font-size="20" fill="rgba(255,255,255,0.7)" letter-spacing="4">Good Vibes | Solana | $BLUEW</text>
+</svg>
