@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>BlueWave - Curaçao Good Vibes</title>
+<meta name="description" content="BlueWave (BLUEW) - A Solana memecoin representing the heart, culture, and good vibes of Curaçao. Fair launch, 0% presale, 2% tax to marketing.">
+<link rel="icon" type="image/svg+xml" href="assets/logo-icon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700;9..40,800&family=Playfair+Display:ital,wght@0,600;1,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav__inner container">
+    <a href="/" class="nav__logo">
+      <img src="assets/logo-icon.svg" alt="BlueWave" width="40" height="40">
+      <span>BlueWave</span>
+    </a>
+    <div class="nav__links">
+      <a href="#about">About</a>
+      <a href="#token">Token</a>
+      <a href="#dashboard">Live</a>
+      <a href="#buy">Buy</a>
+    </div>
+    <button class="nav__toggle" aria-label="Menu">☰</button>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero__bg"></div>
+  <div class="container hero__inner">
+    <div class="hero__content">
+      <span class="hero__badge">Solana Memecoin</span>
+      <h1 class="hero__title">
+        <span class="hero__wave">🌊</span>
+        BlueWave
+        <span class="hero__sub">Curaçao</span>
+      </h1>
+      <p class="hero__desc">
+        Good vibes from the heart of Curaçao. A memecoin celebrating the island's culture,<br>
+        its beautiful beaches, and the Barika Hel spirit.
+      </p>
+      <div class="hero__cta">
+        <a href="#buy" class="btn btn--primary">Buy BLUEW</a>
+        <a href="#about" class="btn btn--ghost">Learn More →</a>
+      </div>
+      <div class="hero__ticker">
+        <span class="ticker__price" id="hero-price">$0.000000</span>
+        <span class="ticker__change" id="hero-change">Loading...</span>
+      </div>
+    </div>
+    <div class="hero__visual">
+      <div class="hero__card">
+        <div class="hero__bird">
+          <svg viewBox="0 0 200 200"><use href="assets/bird.svg#bird"/></svg>
+        </div>
+        <div class="hero__stats">
+          <div><span class="stat__label">Supply</span><span class="stat__value">1B</span></div>
+          <div><span class="stat__label">Tax</span><span class="stat__value">2%</span></div>
+          <div><span class="stat__label">Chain</span><span class="stat__value">Solana</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="hero__wave-bot">
+    <svg viewBox="0 0 1440 120" preserveAspectRatio="none"><path d="M0,60 C360,120 720,0 1440,60 L1440,120 L0,120 Z" fill="#F0F8FF"/></svg>
+  </div>
+</section>
+
+<section class="about" id="about">
+  <div class="container">
+    <h2 class="section__title">The Spirit of Curaçao</h2>
+    <p class="section__desc">
+      BlueWave isn't just a token. It's a movement to share the warmth, color, and good vibes of Curaçao with the world.
+    </p>
+    <div class="about__grid">
+      <div class="about__card">
+        <div class="about__icon">🏝️</div>
+        <h3>Curaçao Culture</h3>
+        <p>Representing the island's rich heritage, colorful architecture, and the legendary Barika Hel bird.</p>
+      </div>
+      <div class="about__card">
+        <div class="about__icon">🌊</div>
+        <h3>Good Vibes Only</h3>
+        <p>A community built on positivity, warmth, and the unique energy that makes Curaçao special.</p>
+      </div>
+      <div class="about__card">
+        <div class="about__icon">🚀</div>
+        <h3>Fair Launch</h3>
+        <p>Zero presale. Zero team allocation. Everyone buys at the same time. Pure community-driven.</p>
+      </div>
+      <div class="about__card">
+        <div class="about__icon">🤝</div>
+        <h3>Community First</h3>
+        <p>2% tax goes 100% to marketing — growing the community, promoting Curaçao, and building value.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="token" id="token">
+  <div class="container">
+    <h2 class="section__title">Tokenomics</h2>
+    <div class="token__grid">
+      <div class="token__card token__card--highlight">
+        <span class="token__label">Name</span>
+        <span class="token__value">BlueWave</span>
+      </div>
+      <div class="token__card">
+        <span class="token__label">Ticker</span>
+        <span class="token__value token__ticker">BLUEW</span>
+      </div>
+      <div class="token__card">
+        <span class="token__label">Blockchain</span>
+        <span class="token__value">Solana</span>
+      </div>
+      <div class="token__card">
+        <span class="token__label">Total Supply</span>
+        <span class="token__value">1,000,000,000</span>
+      </div>
+      <div class="token__card">
+        <span class="token__label">Tax</span>
+        <span class="token__value">2%</span>
+      </div>
+      <div class="token__card">
+        <span class="token__label">Tax Destination</span>
+        <span class="token__value">Marketing 100%</span>
+      </div>
+      <div class="token__card">
+        <span class="token__label">Launch Type</span>
+        <span class="token__value">Fair Launch</span>
+      </div>
+      <div class="token__card">
+        <span class="token__label">Standard</span>
+        <span class="token__value">SPL Token 2022</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="dashboard" id="dashboard">
+  <div class="container">
+    <h2 class="section__title">Live Dashboard</h2>
+    <p class="section__desc">Real-time price data for BlueWave.</p>
+    <div class="dashboard__grid">
+      <div class="dashboard__card dashboard__price">
+        <span class="dash__label">BLUEW / SOL</span>
+        <span class="dash__value" id="price">—</span>
+        <span class="dash__change" id="change">Connect wallet</span>
+      </div>
+      <div class="dashboard__card">
+        <span class="dash__label">Market Cap</span>
+        <span class="dash__value" id="mcap">—</span>
+      </div>
+      <div class="dashboard__card">
+        <span class="dash__label">Liquidity</span>
+        <span class="dash__value" id="liquidity">—</span>
+      </div>
+      <div class="dashboard__card">
+        <span class="dash__label">24h Volume</span>
+        <span class="dash__value" id="volume">—</span>
+      </div>
+    </div>
+    <div class="dashboard__chart">
+      <div class="chart__placeholder">
+        <p>Connect wallet or add token address to see live chart</p>
+        <button class="btn btn--small" onclick="document.getElementById('token-config').showModal()">Configure Token</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="buy" id="buy">
+  <div class="container">
+    <h2 class="section__title">How to Buy</h2>
+    <div class="buy__steps">
+      <div class="buy__step">
+        <div class="step__num">1</div>
+        <div class="step__content">
+          <h3>Create a Wallet</h3>
+          <p>Download <a href="https://phantom.app" target="_blank">Phantom Wallet</a> (browser or mobile). Save your seed phrase securely.</p>
+        </div>
+      </div>
+      <div class="buy__step">
+        <div class="step__num">2</div>
+        <div class="step__content">
+          <h3>Get SOL</h3>
+          <p>Buy Solana (SOL) on an exchange or directly in Phantom with a card. You need a small amount for fees.</p>
+        </div>
+      </div>
+      <div class="buy__step">
+        <div class="step__num">3</div>
+        <div class="step__content">
+          <h3>Swap for BLUEW</h3>
+          <p>You'll be able to swap SOL for BLUEW on Jupiter or Raydium once the token is live. Use the contract address below.</p>
+        </div>
+      </div>
+    </div>
+    <div class="buy__address">
+      <span class="address__label">Contract Address (coming soon)</span>
+      <div class="address__box">
+        <code id="contract-addr">Solana SPL Token 2022</code>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="community">
+  <div class="container">
+    <h2 class="section__title">Join the Wave</h2>
+    <p class="section__desc">Connect with the BlueWave community</p>
+    <div class="community__links">
+      <a href="#" class="social social--discord" target="_blank">
+        <svg viewBox="0 0 24 24" width="28" height="28"><path fill="currentColor" d="M19.27 5.33C17.94 4.71 16.5 4.26 15 4a.09.09 0 0 0-.07.03c-.18.33-.39.76-.53 1.09a16.09 16.09 0 0 0-4.8 0c-.14-.34-.35-.76-.54-1.09c-.01-.02-.04-.03-.07-.03c-1.5.26-2.93.71-4.27 1.33c-.01 0-.02.01-.03.02c-2.72 4.07-3.47 8.03-3.1 11.95c0 .02.01.04.03.05c1.8 1.32 3.53 2.12 5.24 2.65c.03.01.06 0 .07-.02c.4-.55.76-1.13 1.07-1.74c.02-.04 0-.08-.04-.09c-.57-.22-1.11-.48-1.64-.78c-.04-.02-.04-.08-.01-.11c.11-.08.22-.17.33-.25c.02-.02.05-.02.07-.01c3.44 1.57 7.15 1.57 10.55 0c.02-.01.05-.01.07.01c.11.08.22.17.34.25c.02.02.02.08-.01.11c-.52.31-1.07.56-1.64.78c-.04.01-.05.06-.04.09c.32.61.67 1.19 1.07 1.74c.03.01.06.02.09.01c1.72-.53 3.45-1.33 5.25-2.65c.02-.01.03-.03.03-.05c.44-4.53-.73-8.46-3.1-11.95c-.01-.01-.02-.02-.04-.02M8.52 14.91c-1.03 0-1.89-.95-1.89-2.12s.84-2.12 1.89-2.12c1.06 0 1.9.96 1.89 2.12c0 1.17-.84 2.12-1.89 2.12m6.97 0c-1.03 0-1.89-.95-1.89-2.12s.84-2.12 1.89-2.12c1.06 0 1.9.96 1.89 2.12c0 1.17-.83 2.12-1.89 2.12"/></svg>
+        <span>Discord</span>
+      </a>
+      <a href="#" class="social social--youtube" target="_blank">
+        <svg viewBox="0 0 24 24" width="28" height="28"><path fill="currentColor" d="M23.5 6.19a3.02 3.02 0 0 0-2.12-2.14C19.48 3.5 12 3.5 12 3.5s-7.48 0-9.38.55A3.02 3.02 0 0 0 .5 6.19C0 8.1 0 12 0 12s0 3.9.5 5.81a3.02 3.02 0 0 0 2.12 2.14c1.9.55 9.38.55 9.38.55s7.48 0 9.38-.55a3.02 3.02 0 0 0 2.12-2.14C24 15.9 24 12 24 12s0-3.9-.5-5.81M9.55 15.57V8.43L15.82 12l-6.27 3.57"/></svg>
+        <span>YouTube</span>
+      </a>
+      <a href="#" class="social social--facebook" target="_blank">
+        <svg viewBox="0 0 24 24" width="28" height="28"><path fill="currentColor" d="M24 12.073c0-6.628-5.373-12-12-12s-12 5.372-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669c1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+        <span>Facebook</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container footer__inner">
+    <div class="footer__brand">
+      <img src="assets/logo-icon.svg" alt="" width="32" height="32">
+      <span>BlueWave</span>
+    </div>
+    <p class="footer__copy">Good vibes from Curaçao. $BLUEW</p>
+    <p class="footer__disclaimer">This is a community memecoin. DYOR.</p>
+  </div>
+</footer>
+
+<dialog class="modal" id="token-config">
+  <form method="dialog" class="modal__form">
+    <h2>Configure Token</h2>
+    <p>Enter your BLUEW token address to enable live price tracking.</p>
+    <input type="text" id="token-address-input" placeholder="Solana token address..." class="modal__input">
+    <div class="modal__actions">
+      <button type="button" class="btn btn--primary" onclick="saveTokenAddress()">Save</button>
+      <button type="button" class="btn btn--ghost" onclick="document.getElementById('token-config').close()">Cancel</button>
+    </div>
+  </form>
+</dialog>
+
+<script src="js/app.js"></script>
+</body>
+</html>

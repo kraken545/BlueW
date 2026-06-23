@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <g id="bird">
+    <ellipse cx="80" cy="120" rx="30" ry="40" fill="#228B22"/>
+    <ellipse cx="76" cy="128" rx="18" ry="26" fill="#90EE90"/>
+    <circle cx="54" cy="92" r="22" fill="#228B22"/>
+    <path d="M34,92 A22,22 0 0,1 54,70" fill="#FFD700"/>
+    <path d="M42,78 Q52,68 60,74" fill="#FFD700"/>
+    <circle cx="48" cy="90" r="8" fill="white"/>
+    <circle cx="48" cy="90" r="4" fill="#1a1a1a"/>
+    <circle cx="50" cy="88" r="1.5" fill="white"/>
+    <path d="M30,96 L16,94 L20,98 L30,100Z" fill="#2a2a2a"/>
+    <path d="M30,100 L16,94 L20,98 L30,100Z" fill="#4a4a4a"/>
+    <ellipse cx="92" cy="115" rx="24" ry="16" fill="#006400" transform="rotate(-20,92,115)"/>
+    <ellipse cx="96" cy="112" rx="10" ry="8" fill="#FFD700" opacity="0.8" transform="rotate(-15,96,112)"/>
+    <path d="M94,160 L100,180 L88,180 L84,160Z" fill="#006400"/>
+    <path d="M32,64 Q40,56 48,64" fill="#FF8C00" opacity="0.6"/>
+    <path d="M36,60 Q40,52 44,60" fill="#FF8C00" opacity="0.4"/>
+  </g>
+</svg>
